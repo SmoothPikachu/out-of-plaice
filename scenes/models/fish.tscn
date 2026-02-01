@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://56xon3jcf3sm"]
 
-[node name="Fish" type="Node2D"]
+[ext_resource type="Script" uid="uid://ba868rl11ryfj" path="res://scripts/entities/fish.gd" id="1_gldll"]
+
+[node name="Fish" type="Node2D" unique_id=376448051]
+script = ExtResource("1_gldll")
