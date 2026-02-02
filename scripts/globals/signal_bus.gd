@@ -1,3 +1,3 @@
-extends Resource
+extends Node
 
 # Signals go here
