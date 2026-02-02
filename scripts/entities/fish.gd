@@ -4,6 +4,7 @@ extends RigidBody2D
 
 # Fish params
 @export var species: String # Different species have a different index type
+@export var texture: Resource
 @export var weight: int
 @export var oddities: Array = []
 
@@ -14,8 +15,9 @@ extends RigidBody2D
 @onready var fish_sprite: Sprite2D = $FishSprite
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
-func setup(_species: String, _weight: int, _oddities: Array) -> void:
+func setup(_species: String, _texture: Resource, _weight: int, _oddities: Array) -> void:
 	species = _species
+	texture = _texture
 	weight = _weight
 	oddities.append_array(_oddities)
 
@@ -26,7 +28,7 @@ func _ready() -> void:
 	self.sleeping = true
 	
 	# Setup child objects
-	fish_sprite.texture = load("res://resources/images/generic_fish_placeholder.png")
+	fish_sprite.texture = texture
 	collision_shape.z_index = 1
 	
 func _process(_delta) -> void:
