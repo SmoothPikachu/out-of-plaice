@@ -23,3 +23,12 @@ text = "Mouse Coords:"
 [node name="MouseCoordsValueLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=491465414]
 layout_mode = 2
 text = "(0,0)"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1256446711]
+layout_mode = 2
+
+[node name="SpawnFishButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=528866092]
+layout_mode = 2
+text = "Spawn Fish"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/SpawnFishButton" to="." method="_on_spawn_fish_button_pressed"]
