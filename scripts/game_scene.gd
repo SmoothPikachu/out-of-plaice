@@ -8,7 +8,7 @@ var fish = []
 var bins = []
 
 func _init():
-	pass
+	SignalBus.day_timer_expired.connect(_on_day_timeout)
 
 func _ready() -> void:
 	# Link signals
@@ -31,10 +31,14 @@ func _ready() -> void:
 	second_bin.state = 2
 	bins.append(second_bin)
 	add_child(second_bin)
+	
+	# Start game
+	SignalBus.day_timer_start.emit(25)
 
 func spawn_fish() -> void:
 	var new_fish = FishGenerator.generate_fish(FishGenerator.PLAICE)
 	fish.append(new_fish)
 	add_child(new_fish)
 	
-	
+func _on_day_timeout():
+	get_tree().change_scene_to_file("res://scenes/menus/end_day_scene.tscn")

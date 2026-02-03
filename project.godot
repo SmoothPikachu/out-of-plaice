@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*res://scripts/globals/signal_bus.gd"
+GameState="*uid://dvs3827maljis"
 
 [input]
 

@@ -53,6 +53,6 @@ func change_state(new_state: int):
 	state = new_state
 	if state == 1:
 		SignalBus.destroy_fish.emit(self)
-		self.queue_free()
 	elif state == 2:
 		SignalBus.sell_fish.emit(self)
+	self.queue_free()
